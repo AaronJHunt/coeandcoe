@@ -25,15 +25,23 @@ p {
 }
 
 h1 {
-    text-transform: uppercase;
+    text-transform: lowercase;
+    font-family: 'Century Gothic Paneuropean', sans-serif;
+    font-weight: 600;
     font-size: 5em;
     color: white;
+    letter-spacing: 0.2em;
 }
 
 h3 {
     font-style: italic;
     font-weight: 100;
     color: white;
+}
+
+.redlogo {
+    font-size: .75em;
+    color: orangered;
 }
 
 .red {
@@ -121,10 +129,6 @@ footer .maps {
 
 @media (max-width: 767px) {
 
-    .navtitle {
-        
-    }
-
     nav {
         width: 100%;
         /* height: 100%; */
@@ -150,9 +154,39 @@ footer .maps {
         max-height: 0%;
         transform: max-height .5s ease-out;
     }
+
+    .jumbotron-text {
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .jumbotron-text > div > h1{
+        margin: 0;
+        padding: 0;
+        line-height: .75em;
+        /* border: 1px solid red; */
+    }
+
+    .jumbotron-text > div > h3{
+        margin: 0;
+        padding: 0;
+        line-height: 2em;
+        /* border: 1px solid red; */
+    }
 }
 
+
 @media (min-width: 768px) {
+
+    .jumbotron-text {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .break {
+        flex-basis: 100%;
+        height: 0;
+    }
 
     nav {
         max-height: none;
@@ -308,6 +342,7 @@ footer .maps {
 }
 
 .jumbotron-text {
+    display: flex;
     margin: 0 auto;
     width: 1100px;
     filter: none;
