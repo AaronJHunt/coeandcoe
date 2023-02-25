@@ -9,18 +9,21 @@ function scrollFunction() {
     //console.log(document.documentElement.scrollTop);
     header = document.querySelector('header');
     navtitle = document.querySelector('.navtitle');
+    mobilenav = document.querySelector('nav');
     let products = document.querySelector('#products');
 
     if(document.documentElement.scrollTop > 150) {
         header.classList.add('scrolled');
         header.classList.remove('unscrolled');
         header.style.height = '50px';
+        mobilenav.style.top = '50px';
         navtitle.classList.add('visible');
         navtitle.classList.remove('hidden');
     } else {
         header.classList.add('unscrolled');
         header.classList.remove('scrolled');
         header.style.height = '70px';
+        mobilenav.style.top = '70px';
         navtitle.classList.add('hidden');
         navtitle.classList.remove('visible');
     }
@@ -53,7 +56,11 @@ scrollToSection = (section) => {
         document.documentElement.scrollTop = anchor.offsetTop - servicesOffset;
         document.body.scrollTop = anchor.offsetTop - servicesOffset;
     }
-    
+    mobilenav = document.querySelector('nav');
+    sidemenu = document.getElementById('side-menu');
+    if (sidemenu.checked) {
+        sidemenu.checked = false;
+    }
 }
 
 let isInViewPort = (elem) => {

@@ -8,12 +8,16 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    background-color: #ECF0F1;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
     /* background-color: #ECF0F1; */
     background-color: #FFFFFF;
+    /* max-width: 1920px; */
+    /* margin: 0 auto; */
+
 }
 
 p {
@@ -43,6 +47,7 @@ header {
     height: 70px;
     transition: all .5s ease-in-out;
     z-index: 9;
+    overflow: hidden;
 }
 
 footer {
@@ -90,57 +95,125 @@ footer .maps {
     height: auto;
 }
 
-nav {
+.header-wrapper {
     width: 960px;
     margin: 0 auto;
-    z-index: 2;
-    display: inline-block;
-}
-
-.nav {
+    padding: 0;
+    display: flex;
+    justify-content: right;
     position: relative;
-}
-
-nav .nav {
-    display: inline-block;
-    float: right;
 }
 
 .navtitle {
     color: white;
     font-weight: bold;
     text-transform: uppercase;
-    display: inline-block;
+    /* display: inline-block; */
     transition: all .4s ease-in-out;
-    padding: 5px;
+    padding-left: 20px; 
+    /* position: absolute;
+    left: 0;
+    top: 0 */
+    margin: 0 auto 0 0
 }
 
-.navtitle a {
-    cursor: pointer;
+/* mobile nav */
+
+@media (max-width: 767px) {
+
+    .navtitle {
+        
+    }
+
+    nav {
+        width: 100%;
+        /* height: 100%; */
+        position: fixed;
+        top: 50px;
+        right: 0;
+        background-color: darkslategrey;
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+    .menu a {
+        display: block;
+        padding: 30px;
+        color: white;
+    }
+
+    .menu a:hover {
+        background-color: grey;
+    }
+
+    .nav {
+        max-height: 0%;
+        transform: max-height .5s ease-out;
+    }
 }
 
-.item {
-    display: inline-block;
-    margin: 0 10px;
-    border: 0px solid black;
-    padding: 5px;
-}
+@media (min-width: 768px) {
 
-.item a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    font-weight: bold;
-    transition: 0.3s ease;
-    border-bottom: 4px solid transparent;
-    padding-bottom: 20px;
-    cursor: pointer;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); 
-}
+    nav {
+        max-height: none;
+        /* width: 960px; */
+        margin: 0 auto;
+        z-index: 2;
+        /* display: block; */
+    }
 
-.item a:hover {
-    border-bottom: 4px solid white;
-    padding-bottom: 0px;
+    .menu {
+        position: absolute;
+        right: 0;
+        margin-top: -2px;
+    }
+
+    .menu a {
+        /* display: block; */
+        /* padding: 30px; */
+        color: white;
+    }
+
+    .menu a:hover {
+        background-color: transparent;
+    }
+
+    nav .menu {
+        /* display: inline-block; */
+        /* float: right; */
+    }
+
+    .navtitle a {
+        cursor: pointer;
+    }
+
+    .item {
+        display: inline-block;
+        margin: 0 10px;
+        border: 0px solid black;
+        padding: 5px;
+    }
+
+    .item a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s ease;
+        border-bottom: 4px solid transparent;
+        padding-bottom: 20px;
+        cursor: pointer;
+        text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.4); 
+    }
+
+    .item a:hover {
+        border-bottom: 4px solid white;
+        padding-bottom: 0px;
+    }
+
+    .hamb {
+        display: none;
+    }
 }
 
 .scrolled {
@@ -153,13 +226,85 @@ nav .nav {
     background-color: transparent;
 }
 
-.jumbotron {
+/* Hamburger menu */
+
+.hamb {
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    padding-right: 20px;
+    margin-top: -2px;
+}
+
+.hamb-line {
+    background: white;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
     width: 100%;
+}
+
+.hamb-line::before {
+    top: 5px;
+}
+
+.hamb-line::after {
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+}
+
+/* toggle menu */
+
+.side-menu:checked ~ .nav {
+    max-height: 100%;
+}
+
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Jumbotron styling */
+
+#top {
+    width: 100%;
+    background-color: #ECF0F1;
+}
+.jumbotron {
+    max-width: 1920px;
     height: 500px;
-    background-image: url('./images/banner3blur.jpg');
+    background-image: linear-gradient(
+        hsl(0 0% 0% / .8),
+        hsl(20 0% 0% / .3) 20%,
+        hsl(0 0% 0% / 0)),
+    url('./images/banner3blur.jpg');
     background-position: center;
     background-size: cover;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .jumbotron-text {
@@ -199,33 +344,70 @@ nav .nav {
     width: 100%;
     min-height: 200px;
     padding: 0px 20px 0 20px;
+    
+}
+
+#about > h3 {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    padding: 1rem;
+    text-align: center;
 }
 
 #services {
     width: 100%;
+    background-color: #ECF0F1;
+}
+
+
+.services {
+    max-width: 1920px;
     min-height: 600px;
     padding: 0;
-    background-color: white;
+    background-color: transparent;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
+    gap: 1rem;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+
+.services > div:before {
     overflow: hidden;
 }
 
-#services > div:before {
-    overflow: hidden;
+@media (min-width: 768px) {
+    .services > div {
+        /* flex: 1 0 calc(33%); */
+        /* flex-basis: auto; */
+        min-width: 25rem;
+        overflow: hidden;
+        position: relative;
+        /* transition: transform 500ms ease; */
+    }
 }
 
-#services > div {
-    flex: 1 0 calc(33% - 10px);
-    overflow: hidden;
-    position: relative;
+@media (max-width: 767px) {
+    .services > div {
+        position: relative;
+        width: 100vw;
+        height: 400px;
+        overflow: hidden;
+    }
 }
 
-#services > div:hover > div {
+
+
+
+.services > div:hover > .card-cover,
+.services > div:focus-within > .card-cover {
     transform: scale(1.04)
 }
 
-#services > div > div {
+.services > div > .card-cover {
     height: 100%;
     width: 100%;
     background-position: center;
@@ -234,27 +416,23 @@ nav .nav {
     transition: all 1s;
 }
 
-#services > div > h2 {
+.services > div > .card-content {
     position: absolute;
     bottom: 0;
     color: #FFFFFF;
-    background-color: rgba(0, 0, 0, 0.2);
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(20 0% 0% / .3) 20%,
+        hsl(0 0% 0% / 1)
+    );
     width: 100%;
     padding: .5rem;
-    transition: all 1s;
+    /* transition: all 1s; */
 }
 
-#services > div:hover > h2 {
-    top: 0;
-}
-
-#services > div:hover > p {
-    top: 0;
-}
-
-#services > div > p {
-    position: absolute;
-    bottom: 0;
+.card-content > .card-title {
+    padding: 0 0 16px 0;
 }
 
 .service-eye {
@@ -277,6 +455,18 @@ nav .nav {
     background-image: url('./images/service-glasses.jpeg');
 }
 
+@media (hover) {
+    .card-content {
+        transform: translateY(70%);
+        transition: transform 500ms ease;
+    }
+
+    .services > div:hover > .card-content {
+        transform: translateY(0);
+        /* transition-delay: 500ms; */
+    }
+}
+
 #products {
     width: 100%;
     min-height: 250px;
@@ -286,6 +476,14 @@ nav .nav {
 
 #products p {
     margin: 10px 20px;
+}
+
+#products h3 {
+    color: #000;
+    font-size: 1.5rem;
+    font-style: normal;
+    padding: 1rem;
+    text-align: center;
 }
 
 .flex-container {
@@ -386,7 +584,8 @@ nav .nav {
 }
 
 #contact > form {
-    margin: 10px 40px;
+    margin: 10px auto;
+    max-width: 960px;
 }
 
 input, textarea{

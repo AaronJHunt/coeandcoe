@@ -11,56 +11,81 @@
 </head>
 <body>
     <header id="header" class="v-align">
-        <nav class="mynav">
+        <div class="header-wrapper">
             <h3 class="navtitle hidden"><a onclick="scrollToSection('top')">Coe <span class="red">&</span> Coe</a></h2>
-            <ul class="nav">
-                <li class="item"><a onclick="scrollToSection('about')">About</a></li>
-                <li class="item"><a onclick="scrollToSection('services')">Services</a></li>
-                <li class="item"><a onclick="scrollToSection('products')">Products</a></li>
-                <li class="item"><a onclick="scrollToSection('contact')">Contact Us</a></li>
-            </ul>
-            <span class="linktarget"></span>
-        </nav>
+
+            <input class="side-menu" type="checkbox" id="side-menu" />
+            <label class="hamb" for="side-menu"><span class="hamb-line"></span></label></label>
+
+            <nav class="nav">
+                <ul class="menu">
+                    <li class="item"><a onclick="scrollToSection('about')">About</a></li>
+                    <li class="item"><a onclick="scrollToSection('services')">Services</a></li>
+                    <li class="item"><a onclick="scrollToSection('products')">Products</a></li>
+                    <li class="item"><a onclick="scrollToSection('contact')">Contact Us</a></li>
+                </ul>
+                <span class="linktarget"></span>
+            </nav>
+        </div>
     </header>
     <main>
-        <section id="top" class="jumbotron v-align">
-            <div class="jumbotron-text">
-                <h1>Coe <span class="red">&</span> Coe</h1>
-                <h3>Optometrists & Optricians</h3>
+        <section id="top" class="">
+            <div class="jumbotron v-align">
+                <div class="jumbotron-text">
+                    <h1>Coe <span class="red">&</span> Coe</h1>
+                    <h3>Optometrists & Optricians</h3>
+                </div>
             </div>
         </section>
         <section id="about" class="content anchor">
             <!-- <h2>About Coe <span class="red">&</span> Coe</h2> -->
-            <p>Established in 1988, we are Independent Opticians who have built our reputation on offering the highest standards of eyecare, the best quality eyewear and a friendly, yet professional service to our local community and to the world beyond! We are continuously evolving to keep ourselves at the forefront of UK Optometry with our clinical expertise, use of cutting edge diagnostic technology and constant hunt for new and excitingly different spectacle ranges.</p>
+            <h3>Established in 1988, we are Independent Opticians who have built our reputation on offering the highest standards of eyecare, the best quality eyewear and a friendly, yet professional service to our local community and to the world beyond!</h3>
+            <h3>We are continuously evolving to keep ourselves at the forefront of UK Optometry with our clinical expertise, use of cutting edge diagnostic technology and constant hunt for new and excitingly different spectacle ranges.</h3>
         </section>
         <section id="services" class="anchor">
-            <!-- <h2>Services we provide</h2> -->
-            <div class="service">
-                <div class="service-eye"></div>
-                <h2>Eye Examinations</h2>
-                <p>A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+            <div class="services">
+                <!-- <h2>Services we provide</h2> -->
+                <div class="service">     
+                    <div class="card-cover service-eye"></div>     
+                    <div class="card-content">
+                        <h2 class="card-title">Eye Examinations</h2>
+                        <p class="card-body">A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="card-cover service-glasses"></div>
+                    <div class="card-content">
+                        <h2 class="card-title">Glasses Consultation</h2>
+                        <p class="card-body">A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="card-cover service-contact"></div>
+                    <div class="card-content">
+                        <h2 class="card-title">Contact Lenses</h2>
+                        <p class="card-body">A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="card-cover service-visual"></div>
+                    <div class="card-content">
+                        <h2 class="card-title">Visual Dyslexia Screening</h2>
+                        <p class="card-body">A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+                    </div>
+                </div>
+                <div class="service">
+                    <div class="card-cover service-optical"></div>
+                    <div class="card-content">
+                        <h2 class="card-title">Optical Coherence Tomography</h2>
+                        <p class="card-body">A series of tests to measure the ocular health and visual status determining how well a person can see</p>
+                    </div>
+                </div>
+                <!-- <div class="service-extras">Extras</div> -->
             </div>
-            <div class="service">
-                <div class="service-glasses"></div>
-                <h2>Glasses Consultation</h2>
-            </div>
-            <div class="service">
-                <div class="service-contact"></div>
-                <h2>Contact Lenses</h2>
-            </div>
-            <div class="service">
-                <div class="service-visual"></div>
-                <h2>Visual Dyslexia Screening</h2>
-            </div>
-            <div class="service">
-                <div class="service-optical"></div>
-                <h2>Optical Coherence Tomography</h2>
-            </div>
-            <!-- <div class="service-extras">Extras</div> -->
         </section>
-        <section id="products" class="anchor">
+        <section id="products" class="content anchor">
             <!-- <h2>Products available</h2> -->
-            <p>Coe & Coe are Independent Opticians which means we supply a range of all the best designer and budget brands available.</p>
+            <h3>Coe & Coe are Independent Opticians which means we supply a range of all the best designer and budget brands available.</h3>
             <ul class="flex-container">
                 <li class="flex-item chanel product"></li>
                 <li class="flex-item klein product"></li>
