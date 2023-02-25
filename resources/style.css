@@ -122,7 +122,14 @@ footer .maps {
     /* position: absolute;
     left: 0;
     top: 0 */
-    margin: 0 auto 0 0
+    margin: 0 auto 0 0;
+
+    text-transform: lowercase;
+    font-family: 'Century Gothic Paneuropean', sans-serif;
+    font-weight: 600;
+    /* font-size: 5em; */
+    color: white;
+    letter-spacing: 0.2em;
 }
 
 /* mobile nav */
@@ -135,7 +142,7 @@ footer .maps {
         position: fixed;
         top: 50px;
         right: 0;
-        background-color: darkslategrey;
+        background-color: #a2b4c3;
         overflow: hidden;
         transition: all .5s ease-in-out;
     }
@@ -267,7 +274,7 @@ footer .maps {
     position: absolute;
     right: 0;
     padding-right: 20px;
-    margin-top: -2px;
+    margin-top: 0px;
 }
 
 .hamb-line {
