@@ -12,7 +12,8 @@ html {
 }
 
 body {
-    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Century Gothic Paneuropean', sans-serif;
     /* background-color: #ECF0F1; */
     background-color: #FFFFFF;
     /* max-width: 1920px; */
@@ -90,17 +91,58 @@ footer .maps {
     list-style: none;
 }
 
-.info-content {
-    margin: 0 auto;
-    max-width: 960px;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+@media (max-width: 767px) {
+    .info-content {
+        margin: 0 auto;
+        max-width: 960px;
+        display: flex;
+        flex-flow: column-reverse;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .info-content > .info-item {
+        display: flex;
+        /* flex: 1; */
+        flex-direction: column;
+        height: auto;
+        /* align-content: center;
+        margin: 0 auto; */
+    }
 }
 
-.info-content > .info-item {
-    flex: 1;
-    height: auto;
+@media (min-width: 768px) {
+    .info-content {
+        margin: auto;
+        max-width: 960px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+    }
+
+    .info-content > .info-item {
+        display: flex;
+        /* flex: 1; */
+        flex-direction: column;
+        height: auto;
+        align-content: center;
+        margin: 0 auto;
+    }
+}
+
+.social-links {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 3rem;
+    margin: 0 auto;
+}
+
+.social-links > li {
+    font-size: 4em;
+    color: #587187;
 }
 
 .header-wrapper {
