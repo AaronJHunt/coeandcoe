@@ -1,5 +1,15 @@
 //window.onscroll = function() {scrollFunction()};
 
+window.addEventListener("load", function() {
+    loadHeader();
+})
+
+function loadHeader() {
+    if ((document.documentElement.scrollTop || document.body.scrollTop) >= 150) {
+        scrollFunction();
+    }
+}
+
 window.addEventListener("scroll", function() {
     scrollFunction();
 }, false);
